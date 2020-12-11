@@ -12,7 +12,15 @@ export default {
     show
 }
 
+// 每个模块中, 只能使用唯一一次默认导出.否则报错.
 // SyntaxError:: Only one default export allowed per module.
 // export default {
 //     d
 // }
+
+// 按需导出, 一个模块中, 可以使用多次.
+export let s1 = 'aaa'
+export let s2 = 'bbb'
+export function say() {
+    console.log('Oops...');
+}

@@ -5,6 +5,7 @@
         0.1 git init // 创建.git文件, 添加版本控制.
         0.2 创建.gitignore文件, 添加排除非加入版本控制的文件目录.
         0.3 npm init -y // 创建package.json文件, 前端项目模块描述文件.
+        0.4 创建README.md文件, 记录过程[笔记](https://github.com/ningxiaofa/webpack-learning)
 
     1.模块化相关规范
         1.1 模块化概述
@@ -104,3 +105,27 @@
                     console.log(m1)
                     // 打印输出的结果为:
                     // { a: 10, c: 20, show: [Function: show] }
+        
+                2. 按需导出 与 按需导入
+                -- 按需导出语法 export let s1 = 10
+                -- 按需导入语法 import { s1 } from '模块标识符'
+
+                // 当前文件模块为 m1.js
+                    // 向外按需导出变量 s1,
+                    export let s1 = 'aaa'
+                    // 向外按需导出变量 s2
+                    export let s2 = 'ccc'
+                    // 向外按需导出方法 say
+                    export function say = function() {}
+
+                // 导入模块成员
+                    import m1, { s1, s2 as ss2, say } from './m1'
+                    console.log(s1); // aaa
+                    console.log(s2); // ccc
+                    console.log(say); // [Function: say]
+                
+                Note:
+                每个模块中, 可以使用多次按需导出.
+
+                    
+

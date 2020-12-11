@@ -1,2 +1,4 @@
-.history/
+.history
 node_modules
+webpack-real-learning/node_modules
+webpack-real-learning/.history

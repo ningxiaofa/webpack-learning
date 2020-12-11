@@ -1,3 +1,4 @@
+<!-- 文件内容基本同 ../README.md -->
     学习记录
     视频资源: https://www.bilibili.com/video/BV15D4y1d7fF
 
@@ -155,8 +156,7 @@
 
         目前绝大多数企业中的前端项目, 都是基于webpack进行打包构建的.
         功能图参见:
-        src\static\webpack_functions_picture_20201211170127.png
-        或 https://webpack.js.org/
+        https://webpack.js.org/
 
         在该图中:
         中间表示webpack, 即webpack的logo,

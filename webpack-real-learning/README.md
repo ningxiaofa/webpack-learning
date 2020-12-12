@@ -258,3 +258,19 @@
                 // "dev": "webpack-dev-server --open --host localhost --port 8080", // webpack 4.x
                 // "dev": "webpack serve --open http://localhost:8080" // webpack 5.x
             }
+        
+        2.3 webpack 中的加载器
+            1. 通过loader打包非js模块
+            
+            在实际开发过程中, webpack默认只能打包处理以 .js 后缀名结尾的模块, 其他非 .js 后缀名结尾的模块, webpack 默认处理不了, 需要调用 loader 加载器才可以正常打包, 否则会报错.
+
+            loader 加载器可以协助 webpack 打包处理特定的文件模块, 比如:
+            -- less-loader 可以打包处理 .less 相关的文件
+            -- sass-loader 可以打包处理 .scss 相关的文件
+            -- url-loader 可以打包处理 css 与 url 路径相关的文件
+
+            loader的调用过程
+            参见: webpack-real-learning\src\static\imgs\loader的调用过程_20201212203009.png
+
+            Note:
+            webpack 也可以处理json文件, 不需要借助 loader 处理

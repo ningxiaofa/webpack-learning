@@ -4,6 +4,10 @@ import $ from 'jquery'
 // 解决办法: 
 // 使用webpack将这种有兼容性的代码, 转换为没有兼容性的代码. 在index.html中使用转换后的js文件
 
+// webpack 可以不借助loader插件, 处理js/json文件
+import data from './data.json'
+console.log(data); // 控制台打印两次 ？ 因为: http://localhost:8080/src/ 与 http://localhost:8080
+
 $(function(){
     $('li:odd').css('background', 'pink')
     $('li:even').css('background', 'lightblue')

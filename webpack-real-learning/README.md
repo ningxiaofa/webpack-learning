@@ -226,3 +226,7 @@
             ③  将 src -> index.html中, script 脚本的引用路径，修改为 "/bundle.js"
             ④  运行 npm run dev 命令, 重新进行打包
             ⑤  浏览器中访问 http://localhost:8080/ 地址, 查看自动打包效果.
+            
+            Note:
+            -- webpack-dev-server 会启动一个实时打包的 http 服务器.
+            -- webpack-dev-sercer 打包生成的输出文件， 默认放了项目根目录中, 而且是虚拟的, 看不见的[存在于内存中].

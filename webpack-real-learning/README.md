@@ -197,3 +197,20 @@
                     "dev": "webpack" // scripts 节点下的脚本, 可以通过 npm run 执行
                 }
             ⑤  在终端中运行 npm run dev 命令, 启动 webpack 进行项目打包.
+
+            3. 配置打包的入口与出口
+            webpack 4.x 版本中默认约定: // webpack 5也是
+            -- 打包的入口文件为 src -> index.js
+            -- 打包的出口文件为 dist -> main.js
+
+            如果要修改打包的入口与出口, 可以在webpack.config.js 中新增如下配置信息:
+
+            const path = require('path') // 导入 node.js 中专门操作路径的模块
+
+            module.exports = {
+                entry: path.join(__dirname, './src/index.js'), // 打包入口文件的路径
+                output: {
+                    path.join(__dirname, './dist'), // 输出文件的存放路径
+                    filename: 'bundle.js' // 输出文件的名称
+                }
+            }

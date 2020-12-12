@@ -198,7 +198,7 @@
                 }
             ⑤  在终端中运行 npm run dev 命令, 启动 webpack 进行项目打包.
 
-           1. 配置打包的入口与出口
+            3. 配置打包的入口与出口
                webpack 4.x 版本中默认约定: // webpack 5也是
                -- 打包的入口文件为 src -> index.js
                -- 打包的出口文件为 dist -> main.js
@@ -214,3 +214,16 @@
                        filename: 'bundle.js' // 输出文件的名称
                    }
                }
+
+            1. 配置 webpack 的自动打包功能
+            ①  运行 npm i webpack-dev-server -D 命令， 安装支持项目自动打包的工具.
+            ②  修改 package.json -> scripts 中的 dev 命令如下：
+                "scripts": {
+                    "dev": "webpack-dev-server" // webpack 4.x 
+                    // "dev": "webpack serve" // webpack 5.x
+                    // https://github.com/webpack/webpack-dev-server
+                }
+            ③  将 src -> index.html中, script 脚本的引用路径，修改为 "/bundle.js"
+            ④  运行 npm run dev 命令, 重新进行打包
+            ⑤  浏览器中访问 http://localhost:8080/ 地址, 查看自动打包效果.
+            

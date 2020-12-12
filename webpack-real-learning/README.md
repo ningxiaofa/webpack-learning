@@ -214,3 +214,15 @@
                     filename: 'bundle.js' // 输出文件的名称
                 }
             }
+
+            4. 配置 webpack 的自动打包功能
+            ①  运行 npm i webpack-dev-server -D 命令， 安装支持项目自动打包的工具.
+            ②  修改 package.json -> scripts 中的 dev 命令如下：
+                "scripts": {
+                    "dev": "webpack-dev-server" // webpack 4.x 
+                    // "dev": "webpack serve" // webpack 5.x
+                    // https://github.com/webpack/webpack-dev-server
+                }
+            ③  将 src -> index.html中, script 脚本的引用路径，修改为 "/bundle.js"
+            ④  运行 npm run dev 命令, 重新进行打包
+            ⑤  浏览器中访问 http://localhost:8080/ 地址, 查看自动打包效果.

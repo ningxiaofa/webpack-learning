@@ -248,3 +248,13 @@
             http://localhost:8080/
             http://localhost:8080/src/
             上面链接在浏览器中是一样的.
+
+            6. 配置自动打包相关的参数 -- 自动打开浏览器
+            // package.json
+            // --open 打包完成后自动打开的浏览器【系统默认的浏览器, 也可指
+            // --host 配置IP地址
+            // --port 配置端口
+            "scripts": {
+                // "dev": "webpack-dev-server --open --host localhost --port 8080", // webpack 4.x
+                // "dev": "webpack serve --open http://localhost:8080" // webpack 5.x
+            }

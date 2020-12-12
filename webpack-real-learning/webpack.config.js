@@ -2,6 +2,13 @@ const path = require('path');
 // 或者
 // const { resolve } = require('path');
 
+// 导入生成预览页面的插件, 得到一个构造函数
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const htmlPlugin = new HtmlWebpackPlugin({ // 创建插件的实例对象
+    template: './src/index.html', // 指定要用到的模板文件
+    filename: 'index.html' // 指定生成文件名称, 该文件存在于内存中, 在目录中不显示
+});
+
 module.exports = {
     // 编译模式
     mode: 'development', // development | production
@@ -10,5 +17,6 @@ module.exports = {
     output: {
         path: path.join(__dirname, './dist'), // 输出文件的存放路径
         filename: 'bundle.js' // 输出文件的名称
-    }
+    },
+    plugins: [ htmlPlugin ] // plugins 数组是 webpack 打包期间会用到的一些插件列表
 }

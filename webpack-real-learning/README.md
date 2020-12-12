@@ -216,7 +216,7 @@
             }
 
             4. 配置 webpack 的自动打包功能
-            ①  运行 npm i webpack-dev-server -D 命令， 安装支持项目自动打包的工具.
+            ①  运行 npm i webpack-dev-server -D 命令, 安装支持项目自动打包的工具.
             ②  修改 package.json -> scripts 中的 dev 命令如下：
                 "scripts": {
                     "dev": "webpack-dev-server" // webpack 4.x 
@@ -230,3 +230,21 @@
             Note:
             -- webpack-dev-server 会启动一个实时打包的 http 服务器.
             -- webpack-dev-sercer 打包生成的输出文件， 默认放了项目根目录中, 而且是虚拟的, 看不见的[存在于内存中].
+
+            5. 配置 html-webpack-plugin 生成预览页面
+            ①  运行 npm i html-webpack-plugin -D 命令, 安装生成预览页面的插件
+            ②  修改 webpack.config.js 文件头部, 添加如下配置信息:
+                // 导入生成预览页面的插件, 得到一个构造函数
+                const HtmlWebpackPlugin = require('html-webpack-plugin')
+                const htmlPlugin = new HtmlWebpackPlugin({ // 创建插件的实例对象
+                    template: './src/index.html', // 指定要用到的模板文件
+                    filename: 'index.html' // 指定生成文件名称, 该文件存在于内存中, 在目录中不显示
+                });
+            ③   修改 webpack.config.js 文件中向外暴露的配置对象, 新增如下配置节点:
+                module.exports = {
+                    plugins: [ htmlPlugin ] // plugins 数组是 webpack 打包期间会用到的一些插件列表
+                }
+            Note:
+            http://localhost:8080/
+            http://localhost:8080/src/
+            上面链接在浏览器中是一样的.

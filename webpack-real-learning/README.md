@@ -326,3 +326,15 @@
                 }
             Note:
             在 IE11 下测试, 依然有兼容性问题. TBD
+
+            5. 打包样式表中的图片与字体文件
+            ①  运行 npm i url-loader file-loader -D 命令
+            ②  在 webpack.config.js 的module -> rules 数组中, 添加 loader 规则如下:
+                module: {
+                    rules: [
+                        { test:  /\.jpg|jpeg|png|gif|bmp|ttf|eot|svg|woff|woff2$/, use: 'url-loader?limit=86059'}
+                    ]
+                }
+                Note:
+                其中 ? 之后的是 loader 的参数项
+                limit 用来指定图片的大小, 单位是字节(byte), 只有小于/等于limit大小的图片, 才会被转为 base64 图片

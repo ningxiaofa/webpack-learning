@@ -23,7 +23,8 @@ module.exports = {
         rules: [
             { test: /\.css$/, use: ['style-loader', 'css-loader', 'postcss-loader']},
             { test:  /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']},
-            { test:  /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
+            { test:  /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']},
+            { test:  /\.jpg|jpeg|png|gif|bmp|ttf|eot|svg|woff|woff2$/, use: 'url-loader?limit=86058'}
         ]
     } 
 }

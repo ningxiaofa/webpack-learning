@@ -299,3 +299,13 @@
                         { test:  /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']}
                     ]
                 }
+            
+            3. 打包处理scss文件
+            ①  运行 npm i sass sass-loader -D 命令
+            ②  在 webpack.config.js 的module -> rules 数组中, 添加 loader 规则如下:
+                // 所有第三方文件模块的匹配规则
+                module: {
+                    rules: [
+                        { test:  /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
+                    ]
+                }

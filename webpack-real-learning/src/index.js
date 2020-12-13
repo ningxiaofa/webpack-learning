@@ -9,6 +9,7 @@ import $ from 'jquery'
 // console.log(data); // 控制台打印两次 ？ 因为: http://localhost:8080/src/ 与 http://localhost:8080
 
 import './css/1.css'
+import './css/1.less'
 
 $(function(){
     $('li:odd').css('background', 'pink')

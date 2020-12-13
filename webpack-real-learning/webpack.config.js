@@ -21,7 +21,8 @@ module.exports = {
     plugins: [ htmlPlugin ], // plugins 数组是 webpack 打包期间会用到的一些插件列表
     module: {
         rules: [
-            { test: /\.css$/, use: ['style-loader', 'css-loader']}
+            { test: /\.css$/, use: ['style-loader', 'css-loader']},
+            { test:  /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']}
         ]
     } 
 }

@@ -289,3 +289,13 @@
             注意:
             -- use 数组中的指定的 loader 顺序是固定的.
             -- 多个 loader 的调用顺序是: 从后往前调用的.
+
+            2. 打包处理less文件
+            ①  运行 npm i less less-loader -D 命令
+            ②  在 webpack.config.js 的module -> rules 数组中, 添加 loader 规则如下:
+                // 所有第三方文件模块的匹配规则
+                module: {
+                    rules: [
+                        { test:  /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']}
+                    ]
+                }

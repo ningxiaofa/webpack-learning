@@ -274,3 +274,18 @@
 
             Note:
             webpack 也可以处理json文件, 不需要借助 loader 处理
+        
+        2.4 webpack 中加载器的基本使用
+            1. 打包处理 css 文件
+            ①  运行 npm i style-loader css-loader -D 命令, 安装处理 css 文件的loader
+            ②  在 webpack.config.js 的module -> rules 数组中, 添加 loader 规则如下:
+                // 所有第三方文件模块的匹配规则
+                module: {
+                    rules: [
+                        { test: /\.css$/, use: ['style-loader', 'css-loader']}
+                    ]
+                }
+            其中, test 表示匹配的文件类型, use 表示对应要调用的 loader
+            注意:
+            -- use 数组中的指定的 loader 顺序是固定的.
+            -- 多个 loader 的调用顺序是: 从后往前调用的.

@@ -1,0 +1,4 @@
+li {
+    /* 去掉li前面的点 */
+    list-style: none;
+}

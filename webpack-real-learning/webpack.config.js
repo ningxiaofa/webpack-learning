@@ -18,5 +18,10 @@ module.exports = {
         path: path.join(__dirname, './dist'), // 输出文件的存放路径
         filename: 'bundle.js' // 输出文件的名称
     },
-    plugins: [ htmlPlugin ] // plugins 数组是 webpack 打包期间会用到的一些插件列表
+    plugins: [ htmlPlugin ], // plugins 数组是 webpack 打包期间会用到的一些插件列表
+    module: {
+        rules: [
+            { test: /\.css$/, use: ['style-loader', 'css-loader']}
+        ]
+    } 
 }

@@ -309,3 +309,20 @@
                         { test:  /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
                     ]
                 }
+            
+            4. 配置 postCSS 自动添加 css 的兼容前缀
+            ①  运行 npm i postcss-loader autoprefixer -D 命令
+            ②  在项目根目录中创建 postcss 的配置文件 postcss.config.js, 并初始化如下配置:
+                const autoprefixer = require('autoprefixer') // 导入自动添加前缀的插件
+                module.exports = {
+                    plugins: [ autoprefixer ] // 挂载插件
+                }                    
+
+            ③  在 webpack.config.js 的module -> rules 数组中, 修改 css 的 loader 规则如下
+                module: {
+                    rules: [
+                        { test:  /\.scss$/, use: ['style-loader', 'css-loader', 'postcss-loader']}
+                    ]
+                }
+            Note:
+            在 IE11 下测试, 依然有兼容性问题. TBD

@@ -2,3 +2,8 @@ li {
     /* 去掉li前面的点 */
     list-style: none;
 }
+
+/* 伪类选择器, 存在兼容性, 需要添加不同浏览器厂商的前缀, 这里采用插件的方式 */
+::placeholder {
+    color: red;
+}

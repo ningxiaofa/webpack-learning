@@ -24,7 +24,8 @@ module.exports = {
             { test: /\.css$/, use: ['style-loader', 'css-loader', 'postcss-loader']},
             { test:  /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']},
             { test:  /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']},
-            { test:  /\.jpg|jpeg|png|gif|bmp|ttf|eot|svg|woff|woff2$/, use: 'url-loader?limit=86058'}
+            { test:  /\.jpg|jpeg|png|gif|bmp|ttf|eot|svg|woff|woff2$/, use: 'url-loader?limit=86058'},
+            { test: /\.js$/, use: 'babel-loader', exclude: /node-modules/ }
         ]
     } 
 }

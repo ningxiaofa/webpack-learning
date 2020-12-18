@@ -16,3 +16,9 @@ $(function(){
     $('li:odd').css('background', 'pink')
     $('li:even').css('background', 'lightblue')
 })
+
+class Person {
+    static info = 'aaa';
+}
+
+console.log(Person.info);

@@ -1,6 +1,7 @@
 <!-- 文件内容基本同 ../README.md -->
     学习记录
     视频资源: https://www.bilibili.com/video/BV15D4y1d7fF
+    推荐进阶视频: https://www.bilibili.com/video/BV1e7411j7T5?p=1
 
     0.初始化项目
         0.1 git init // 创建.git文件, 添加版本控制.
@@ -338,3 +339,15 @@
                 Note:
                 其中 ? 之后的是 loader 的参数项
                 limit 用来指定图片的大小, 单位是字节(byte), 只有小于/等于limit大小的图片, 才会被转为 base64 图片
+
+            6. 打包处理 js 文件中的高级语法 //下面方式, 一直出现报错: 原因/解决 
+            ①  安装Babel转换器相关的包： npm i babel-loader @babel/core @babel/runtime -D
+            ②  安装babel语法相关插件的包： npm i @babel/preset-env @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D
+            ③  在项目根目录中， 创建 babel 配置文件 babel.config.js 并初始化基本配置如:
+                module.exports = {
+                    presets: [ '@babel/preset-env' ],
+                    plugins: [ '@babel/plugin-transform-runtime',  '@babel/plugin-proposal-class-properties' ],
+                }
+            ④  在webpack.config.js 的 module -> rules 数组中，添加 loader 规则如下:
+                // exclude 为排除项，表示 babel-loader 不需要处理 node-modules 中的 js 文件
+                { test: /\.js$/, use: 'babel-loader', exclude: /node-modules/ }

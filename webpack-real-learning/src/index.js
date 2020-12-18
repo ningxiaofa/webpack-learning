@@ -17,8 +17,9 @@ $(function(){
     $('li:even').css('background', 'lightblue')
 })
 
-class Person {
-    static info = 'aaa';
-}
+// 使用 babel 一直出现报错: TBD
+// class Person {
+//     static info = 'aaa';
+// }
 
-console.log(Person.info);
+// console.log(Person.info);
